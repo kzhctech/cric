@@ -1,4 +1,4 @@
-const socket = io('ws://cric24.herokuapp.com');
+const socket = io('https://cric24.herokuapp.com');
 
 
 function midwiket(run){
