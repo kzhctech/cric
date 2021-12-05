@@ -1,5 +1,5 @@
 const socket = io('https://cric24.herokuapp.com');
-const startingLocation = window.location.pathname;
+const startingLocation = window.location.pathname.substring(1);
 alert(startingLocation);
 
 function midwiket(run){
