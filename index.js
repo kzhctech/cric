@@ -1,5 +1,6 @@
 const socket = io('https://cric24.herokuapp.com');
-
+const startingLocation = window.location.pathname;
+alert(startingLocation);
 
 function midwiket(run){
   const ball = document.getElementById("ball");
