@@ -28,9 +28,11 @@ function midwiket(run){
 
 
 
-socket.on('message',(status)=> {midwiket()});
+socket.on('message',(status)=> {
+  midwiket();
+  console.log('ok');
+});
 
 function hit(){
-  console.log(status);
   socket.emit('message',startingLocation);
 }
