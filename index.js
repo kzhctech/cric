@@ -31,6 +31,6 @@ function midwiket(run){
 socket.on('message',()=> {midwiket()});
 
 function hit(){
-    socket.emit('message');
+    socket.emit('message',startingLocation);
     
 }
