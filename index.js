@@ -31,6 +31,7 @@ function midwiket(run){
 socket.on('message',(status)=> {
   midwiket();
   console.log('ok',status);
+  alert(status.batTeam);
 });
 
 function hit(){
