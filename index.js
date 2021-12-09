@@ -30,7 +30,7 @@ function midwiket(run){
 
 socket.on('message',(status)=> {
   midwiket();
-  console.log('ok');
+  console.log('ok',status);
 });
 
 function hit(){
