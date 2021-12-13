@@ -24,12 +24,15 @@ function midwiket(run){
   
 }
 
-
+function updateit(sts){
+   document.getElementById("statusbar").innerHTML = sts;  
+}
 
 
 
 socket.on('message',(status)=> {
   midwiket();
+  updateit(status.status);
   console.log(status);
 });
 
