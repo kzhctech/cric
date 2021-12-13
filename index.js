@@ -30,8 +30,7 @@ function midwiket(run){
 
 socket.on('message',(status)=> {
   midwiket();
-  //console.log(status);
-  console.log(status.batTeam);
+  console.log(status);
 });
 
 function hit(){
