@@ -38,7 +38,7 @@ function updateScore(sco){
 
 
 function updateBat1(name,run){
-   document.getElementById("bat1").innerHTML = name + run;  
+   document.getElementById("bat1").innerHTML = name;  
 }
 
 
