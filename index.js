@@ -32,6 +32,10 @@ function updateTitle(tit){
    document.getElementById("vs").innerHTML = tit;  
 }
 
+function updateScore(sco){
+   document.getElementById("batScore").innerHTML = sco;  
+}
+
 
 
 
@@ -39,6 +43,7 @@ socket.on('message',(status)=> {
   midwiket();
   updateit(status.status);
   updateTitle(status.title);
+  updateScore(status.batTeam);
   console.log(status);
 });
 
