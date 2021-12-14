@@ -37,6 +37,9 @@ function updateScore(sco){
 }
 
 
+function updateBat1(name,run){
+   document.getElementById("bat1").innerHTML = name + run;  
+}
 
 
 socket.on('message',(status)=> {
@@ -44,6 +47,7 @@ socket.on('message',(status)=> {
   updateit(status.status);
   updateTitle(status.title);
   updateScore(status.batTeam);
+  updateBat1(status.batsman1name,status.batsman1run);
   console.log(status);
 });
 
