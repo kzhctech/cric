@@ -28,11 +28,17 @@ function updateit(sts){
    document.getElementById("statusbar").innerHTML = sts;  
 }
 
+function updateTitle(tit){
+   document.getElementById("vs").innerHTML = tit;  
+}
+
+
 
 
 socket.on('message',(status)=> {
   midwiket();
   updateit(status.status);
+  updateTitle(status.title);
   console.log(status);
 });
 
