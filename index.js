@@ -47,7 +47,7 @@ function updateBat2(name,run){
 
 
 function updateBowler(name,over,wiket){
-   document.getElementById("bowler").innerHTML = name + over + wiket;  
+   document.getElementById("bowler").innerHTML = name + ":" + over + "-" + wiket;  
 }
 
 
