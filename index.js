@@ -41,6 +41,9 @@ function updateBat1(name,run){
    document.getElementById("bat1").innerHTML = name + run;  
 }
 
+function updateBat2(name,run){
+   document.getElementById("bat2").innerHTML = name + run;  
+}
 
 
 socket.on('message',(status)=> {
@@ -49,6 +52,7 @@ socket.on('message',(status)=> {
   updateTitle(status.title);
   updateScore(status.batTeam);
   updateBat1(status.batsman1name,status.batsman1run);
+  updateBat2(status.batsman2name,status.batsman2run);
   console.log(status);
 });
 
