@@ -46,6 +46,11 @@ function updateBat2(name,run){
 }
 
 
+function updateBowler(name,over,wiket){
+   document.getElementById("bat2").innerHTML = name + over + wiket;  
+}
+
+
 socket.on('message',(status)=> {
   midwiket();
   updateit(status.status);
@@ -53,6 +58,7 @@ socket.on('message',(status)=> {
   updateScore(status.batTeam);
   updateBat1(status.batsman1name,status.batsman1run);
   updateBat2(status.batsman2name,status.batsman2run);
+  updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt )
   console.log(status);
 });
 
