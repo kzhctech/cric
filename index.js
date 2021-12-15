@@ -38,8 +38,9 @@ function updateScore(sco){
 
 
 function updateBat1(name,run){
-   document.getElementById("bat1").innerHTML = name;  
+   document.getElementById("bat1").innerHTML = name + run;  
 }
+
 
 
 socket.on('message',(status)=> {
