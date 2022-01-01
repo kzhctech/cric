@@ -53,7 +53,7 @@ function updateBowler(name,over,wiket){
 }
 
 function updatelbb(lbb){
-   document.getElementById("batScore").innerHTML = lbb;  
+   document.getElementById("lbb").innerHTML = lbb;  
 }
 
 socket.on('message',(status)=> {
