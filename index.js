@@ -52,12 +52,16 @@ function updateBowler(name,over,wiket){
    document.getElementById("bowler").innerHTML = name + ":" + over + "-" + wiket;  
 }
 
+function updateLbb(lbb){
+  document.getElementById("lbb").innerHTML = lbb; 
+}
 
 socket.on('message',(status)=> {
 if (cmnty != status.batTeam){
   cmnty = status.batTeam;
   midwiket();
   updateit(status.status);
+  updateLbb(status.lbb);
   updateTitle(status.title);
   updateScore(status.batTeam);
   updateBat1(status.batsman1name,status.batsman1run);
