@@ -52,8 +52,8 @@ function updateBowler(name,over,wiket){
    document.getElementById("bowler").innerHTML = name + ":" + over + "-" + wiket;  
 }
 
-function updateLbb(lbb){
-  document.getElementById("lbb").innerHTML = lbb; 
+function updateLbb(n){
+  document.getElementById("lbb").innerHTML = n; 
 }
 
 socket.on('message',(status)=> {
