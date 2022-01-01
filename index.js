@@ -57,6 +57,7 @@ function updatelbb(lbb){
 }
 
 socket.on('message',(status)=> {
+  console.log('new');
 if (cmnty != status.batTeam){
   cmnty = status.batTeam;
   midwiket();
