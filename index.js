@@ -2,6 +2,8 @@ const socket = io('https://cric24.herokuapp.com');
 const startingLocation = window.location.pathname.substring(1);
 //alert(startingLocation);
 
+const cmnty;
+
 function midwiket(run){
   const ball = document.getElementById("ball");
   const filder = document.getElementById("f1");
@@ -52,6 +54,8 @@ function updateBowler(name,over,wiket){
 
 
 socket.on('message',(status)=> {
+if (cmnty != status.batTeam){
+  cmnty = status.batTeam;
   midwiket();
   updateit(status.status);
   updateTitle(status.title);
@@ -60,6 +64,7 @@ socket.on('message',(status)=> {
   updateBat2(status.batsman2name,status.batsman2run);
   updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt )
   console.log(status);
+}
 });
 
 function hit(){
