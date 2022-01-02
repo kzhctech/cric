@@ -146,8 +146,6 @@
   }
 }
 
-
-
 @keyframes deepExtracover-filder{
   0%{
   top: 120px;
@@ -160,5 +158,21 @@
   100%{
   top: 120px;
   left: -65px;
+  }
+}
+
+
+@keyframes deepExtracover-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+    top: 140px;
+    left: -70px;
+  }
+  100%{
+    top: 0;
+    left: 0;
   }
 }
