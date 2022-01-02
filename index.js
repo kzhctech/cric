@@ -8,7 +8,7 @@ var dtail;
 
 function midwiket(run){
   const ball = document.getElementById("ball");
-  const filder = document.getElementById("f1");
+  const filder = document.getElementById("f7");
   
   if(run < 4 || !run){
     ball.style.animation = "midwiket-ball 4s";
