@@ -6,6 +6,10 @@ var cmnty;
 var cmnt;
 var dtail;
 
+
+/* Midwicket */
+
+
 function midwiket(run){
   const ball = document.getElementById("ball");
   const filder = document.getElementById("f7");
@@ -27,6 +31,9 @@ function midwiket(run){
   }, 5000);
   
 }
+
+
+/* Extracover */
 
 function deepExtracover(run){
   const ball = document.getElementById("ball");
@@ -51,7 +58,9 @@ function deepExtracover(run){
 }
 
 
-  function thirdman(){
+/* Thirdman */
+
+  function thirdman(run){
   
   const ball = document.getElementById("ball");
   const filder = document.getElementById("f2");
