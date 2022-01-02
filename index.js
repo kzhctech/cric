@@ -51,6 +51,33 @@ function deepExtracover(run){
 }
 
 
+  function thirdman(){
+  
+  const ball = document.getElementById("ball");
+  const filder = document.getElementById("f2");
+  
+  if(run < 4 || !run){
+    ball.style.animation = "thirdman-ball 4s";
+  }
+  else{
+    ball.style.animation = "thirdman-ball-boundary 4s";
+  }
+  
+  filder.style.animation = "thirdman-filder 5s";
+  
+  setTimeout(function() {
+    ball.style.animation = "";
+  }, 4000);
+  setTimeout(function() {
+    filder.style.animation = "";
+  }, 5000);
+    
+    
+  }
+
+
+
+
 function updateit(sts){
    document.getElementById("statusbar").innerHTML = sts;  
 }
