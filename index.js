@@ -61,6 +61,7 @@ function updatelbb(lbb){
 socket.on('message',(status)=> {
   console.log('new');
   if (status.commentry != dtail){
+      dtail = status.commentry;
       console.log(status.commentry);
  }
 if (cmnty != status.batTeam && cmnt != status.batTeam){
