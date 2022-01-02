@@ -87,6 +87,10 @@
   right: 100px;
   
 }
+
+
+/* Midwicket */
+
 @keyframes midwiket-ball{
   0%{
     top: 0;
@@ -131,6 +135,10 @@
   left: 65px;
   }
 }
+
+/* Extracover */
+
+
 @keyframes deepExtracover-ball {
   0%{
     top: 0;
@@ -169,6 +177,54 @@
   }
   50%{
     top: 140px;
+    left: -70px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+/* Thirdman */
+
+@keyframes thirdman-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+    top: -100px;
+    left: -40px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes thirdman-filder{
+  0%{
+  top: -50px;
+  right: 90px;
+  }
+  50%{
+    top: -100px;
+    left: -40px;
+  }
+  100%{
+  top: -50px;
+  right: 90px;
+  }
+}
+
+
+@keyframes thirdman-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+    top: -140px;
     left: -70px;
   }
   100%{
