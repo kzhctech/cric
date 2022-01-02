@@ -4,6 +4,7 @@ const startingLocation = window.location.pathname.substring(1);
 
 var cmnty;
 var cmnt;
+var dtail;
 
 function midwiket(run){
   const ball = document.getElementById("ball");
@@ -59,6 +60,9 @@ function updatelbb(lbb){
 
 socket.on('message',(status)=> {
   console.log('new');
+  if (status.commentry != dtail){
+      console.log(status.commentry);
+ }
 if (cmnty != status.batTeam && cmnt != status.batTeam){
   cmnt = cmnty;
   cmnty = status.batTeam;
