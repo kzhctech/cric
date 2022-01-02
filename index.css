@@ -131,3 +131,17 @@
   left: 65px;
   }
 }
+@keyframes deepExtracover-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+    top: 100px;
+    left: -40px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
