@@ -28,6 +28,29 @@ function midwiket(run){
   
 }
 
+function deepExtracover(run){
+  const ball = document.getElementById("ball");
+  const filder = document.getElementById("f8");
+  
+  if(run < 4 || !run){
+    ball.style.animation = "deepExtracover-ball 4s";
+  }
+  else{
+    ball.style.animation = "deepExtracover-ball-boundary 4s";
+  }
+  
+  filder.style.animation = "deepExtracover-filder 5s";
+  
+  setTimeout(function() {
+    ball.style.animation = "";
+  }, 4000);
+  setTimeout(function() {
+    filder.style.animation = "";
+  }, 5000);
+  
+}
+
+
 function updateit(sts){
    document.getElementById("statusbar").innerHTML = sts;  
 }
