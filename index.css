@@ -145,3 +145,20 @@
     left: 0;
   }
 }
+
+
+
+@keyframes midwiket-filder{
+  0%{
+  top: 120px;
+  left: -65px;
+  }
+  50%{
+    top: 100px;
+    left: -40px;
+  }
+  100%{
+  top: 120px;
+  left: -65px;
+  }
+}
