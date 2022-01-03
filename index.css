@@ -193,8 +193,8 @@
     left: 0;
   }
   50%{
-    top: -80px;
-    left: -40px;
+    top: -60px;
+    left: -60px;
   }
   100%{
     top: 0;
@@ -208,8 +208,8 @@
   right: 90px;
   }
   50%{
-    top: -80px;
-    left: -40px;
+    top: -60px;
+    left: -60px;
   }
   100%{
   top: -50px;
@@ -224,8 +224,308 @@
     left: 0;
   }
   50%{
-    top: -140px;
-    left: -70px;
+    top: -160px;
+    left: -150px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+
+/* squreLeg */
+
+
+@keyframes squreLeg-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 35px;
+  left: 90px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes squreLeg-filder{
+  0%{
+  top: 50px;
+  right: -90px;
+  }
+  50%{
+  top: 35px;
+  right: -85px;
+  }
+  100%{
+  top: 50px;
+  right: -90px;
+  }
+}
+
+
+@keyframes squreLeg-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 35px;
+  left: 150px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+
+/* point */
+
+
+
+@keyframes  point-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 40px;
+  left: -80px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes  point-filder{
+  0%{
+  top: 10px;
+  right: 100px;
+  }
+  50%{
+  top: 40px;
+  right:90px;
+  }
+  100%{
+  top: 10px;
+  right: 100px;
+  }
+}
+
+
+@keyframes  point-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 40px;
+  left: -130px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+
+/* midOff */
+
+@keyframes  midOff-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 50px;
+  left :-40px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes  midOff-filder{
+  0%{
+  top: 60px;
+  right: 40px;
+  }
+  50%{
+  top: 55px;
+  right: 55px;
+  }
+  100%{
+  top: 60px;
+  right: 40px;
+  }
+}
+
+
+@keyframes  midOff-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 120px;
+  left :-120px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
+/* midOn */
+
+@keyframes  midOn-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 50px;
+  left :40px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes  midOn-filder{
+  0%{
+  top: 60px;
+  left: 40px;
+  }
+  50%{
+  top: 55px;
+  right: 55px;
+  }
+  100%{
+  top: 60px;
+  left: 40px;
+  }
+}
+
+
+@keyframes  midOn-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: 120px;
+  left :120px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+
+/* fineLeg */
+
+@keyframes  fineLeg-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: -25px;
+  left: 40px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes  fineLeg-filder{
+  0%{
+  top: -25px;
+  left: 40px;
+  }
+  50%{
+  top: -25px;
+  left: 40px;
+  }
+  100%{
+  top: -25px;
+  left: 40px;
+  }
+}
+
+
+@keyframes  fineLeg-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: -55px;
+  left: 120px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+
+/* gully */
+
+
+
+@keyframes  gully-ball {
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: -25px;
+  left: -10px;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes  gully-filder{
+  0%{
+  top: -25px;
+  right: 40px;
+  }
+  50%{
+  top: -25px;
+  left: -10px;
+  }
+  100%{
+  top: -25px;
+  right: 40px;
+  }
+}
+
+
+@keyframes  gully-ball-boundary{
+  0%{
+    top: 0;
+    left: 0;
+  }
+  50%{
+  top: -155px;
+  left: -20px;
   }
   100%{
     top: 0;
