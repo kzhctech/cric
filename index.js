@@ -269,6 +269,7 @@ function updatelbb(lbb){
 
 socket.on('message',(status)=> {
   console.log('new');
+  console.log(status.commentry);
   if (status.commentry != dtail){
       dtail = status.commentry;
       console.log(status.commentry);
