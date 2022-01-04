@@ -284,8 +284,20 @@ if (cmnty != status.batTeam && cmnt != status.batTeam){
   updateBat1(status.batsman1name,status.batsman1run);
   updateBat2(status.batsman2name,status.batsman2run);
   updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt );
-  if (status.commentry.includes("destructive")) {
+  if (status.commentry.includes("point")) {
     point();
+  }
+  
+  else if (status.commentry.includes("mid-on")) {
+    midOn();
+  }
+
+  else if (status.commentry.includes("mid-of")) {
+    midOff();
+  }
+
+  else if (status.commentry.includes("mid-wicket")) {
+    midwiket();
   }
   console.log(status);
 }
