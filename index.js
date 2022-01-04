@@ -314,7 +314,7 @@ if (cmnty != status.batTeam && cmnt != status.batTeam){
   }
   
   
-  console.log('Message');
+  console.log(status.batTeam);
 }
 });
 
