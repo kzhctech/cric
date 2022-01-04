@@ -276,7 +276,7 @@ socket.on('message',(status)=> {
 if (cmnty != status.batTeam && cmnt != status.batTeam){
   cmnt = cmnty;
   cmnty = status.batTeam;
-  midwiket();
+  //midwiket();
   updateit(status.status);
   updatelbb(status.lbb);
   updateTitle(status.title);
