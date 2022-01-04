@@ -312,7 +312,13 @@ if (cmnty != status.batTeam && cmnt != status.batTeam){
   else if (status.commentry.includes("cover")) {
     deepExtracover();
   }
-  
+
+  else if (status.commentry.includes("long-on")) {
+    midwiket();
+  }
+  else if (status.commentry.includes("long-of")) {
+    deepExtracover();
+  }
   
   console.log(status.batTeam);
 }
