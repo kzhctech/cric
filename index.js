@@ -283,7 +283,10 @@ if (cmnty != status.batTeam && cmnt != status.batTeam){
   updateScore(status.batTeam);
   updateBat1(status.batsman1name,status.batsman1run);
   updateBat2(status.batsman2name,status.batsman2run);
-  updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt )
+  updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt );
+  if (status.commentry.includes("destructive")) {
+    point();
+  }
   console.log(status);
 }
 });
