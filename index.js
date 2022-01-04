@@ -299,6 +299,20 @@ if (cmnty != status.batTeam && cmnt != status.batTeam){
   else if (status.commentry.includes("mid-wicket")) {
     midwiket();
   }
+  
+  else if (status.commentry.includes("square")) {
+    squreLeg();
+  }
+  
+  else if (status.commentry.includes("third")) {
+    thirdman();
+  }
+  
+  else if (status.commentry.includes("cover")) {
+    deepExtracover();
+  }
+  
+  
   console.log(status);
 }
 });
