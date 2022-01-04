@@ -270,6 +270,54 @@ function updatelbb(lbb){
 socket.on('message',(status)=> {
   console.log('new');
   console.log(status.commentry);
+  
+  
+  
+  
+  
+  
+  
+    if (status.commentry.includes("point")) {
+    point();
+  }
+  
+  else if (status.commentry.includes("mid-on")) {
+    midOn();
+  }
+
+  else if (status.commentry.includes("mid-of")) {
+    midOff();
+  }
+
+  else if (status.commentry.includes("mid-wicket")) {
+    midwiket();
+  }
+  
+  else if (status.commentry.includes("square")) {
+    squreLeg();
+  }
+  
+  else if (status.commentry.includes("third")) {
+    thirdman();
+  }
+  
+  else if (status.commentry.includes("cover")) {
+    deepExtracover();
+  }
+
+  else if (status.commentry.includes("long-on")) {
+    midwiket();
+  }
+  else if (status.commentry.includes("long-of")) {
+    deepExtracover();
+  }
+  
+  
+  
+  
+  
+  
+  
   if (status.commentry != dtail){
       dtail = status.commentry;
       console.log(status.commentry);
