@@ -1,6 +1,9 @@
+.gwrap{
+  display:flex;
+  justify-content:center;
+}
 .ground{
   background-color: green;
-  margin-left: 50px;
   height: 250px;
   width: 250px;
   border-radius: 50%;
