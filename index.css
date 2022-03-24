@@ -1,3 +1,9 @@
+
+.match
+{
+    color:black;
+}
+
 .gwrap{
   display:flex;
   justify-content:center;
