@@ -7,88 +7,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Cric</title>
-  <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
-  <script src="index.js"></script>
+  <title>Ball2Ball || Live Cricket</title>
 </head>
-<body>
-	<div class="container">
-	<div class="alert alert-secondary" id="vs" role="alert">
-	 Omuk vs tomuk
-	</div>
-		
-	  <div class="alert alert-primary" id="statusbar" role="alert">
-		Status 
-		  
-	</div>
-		<div class="gwrap">
-			<div class="iteam">
-			 		<div class="ground">
-	  <div class="cercel">
-	    <div class="wicket">
-	      <div id="ball"></div>
-	      <div class="filder" id="f1"></div>
-	      <div class="filder" id="f2"></div>
-	      <div class="filder" id="f3"></div>
-	      <div class="filder" id="f4"></div>
-	      <div class="filder" id="f5"></div>
-	      <div class="filder" id="f6"></div>
-	      <div class="filder" id="f7"></div>
-	      <div class="filder" id="f8"></div>
-	      <div class="filder" id="f9"></div>
-	    </div>
-	  </div>
-	</div>
-		
+<body class="bg-light" > 
+
+   <div class="container">
+    <div class="text-center mb-3"><div class="row"><div class="col-sm-12 col-md-6 col-lg-4">
+<img src="logo.png" width="100%" >
+</div></div></div>
+
+
+<h4 class="ml-2 mb-2">Match</h4>
+	<div class="row justify-content-center ">
+
+
+
+
+<div class="col-lg-4 col-md-6">
+<div class="card bg-white mx-2  mb-3" style="width: 100%;">
+<a href="match.html" class="match">
+	       <div class="card-header">Bangladesh tour of New Zealand</div>
+	         <div class="card-body">
+ 			<div class="row">
+			  <div class="col-6">
+			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/2560px-Flag_of_Bangladesh.svg.png"> BAN
+			  </div>
+			  <div class="col-6 text-right">
+			   50-5(32)
+			  </div>
 			</div>
-		</div>
-	<div class="alert alert-success my-4" role="alert">
-  <div class="row">
-	  
-<div class="col-lg-3 text-light bg-primary">
-	<h4 id="batScore">Batting Team Score here</h4>
+ 			<div class="row mt-2">
+			  <div class="col-6">
+			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/640px-Flag_of_New_Zealand.svg.png"> NZ
+			  </div>
+			  <div class="col-6 text-right">
+			   521-6 D
+			  </div>
+			</div>
+			<h6 class="text-primary mt-2">Day 2: 3rd Session - Bangladesh trail by 435 runs<h6>
+
+	         </div>
+    </a></div>
 </div>
-	  
-<div class="col-lg-3 text-white bg-info" id="bat1">
-	Bat 1	  
+
+
+
+
+
+<div class="col-lg-4 col-md-6">
+<div class="card bg-white mx-2  mb-3" style="width: 100%;">
+<a href="match.html" class="match">
+	       <div class="card-header">Bangladesh tour of New Zealand</div>
+	         <div class="card-body">
+ 			<div class="row">
+			  <div class="col-6">
+			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/2560px-Flag_of_Bangladesh.svg.png"> BAN
+			  </div>
+			  <div class="col-6 text-right">
+			   50-5(32)
+			  </div>
+			</div>
+ 			<div class="row mt-2">
+			  <div class="col-6">
+			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/640px-Flag_of_New_Zealand.svg.png"> NZ
+			  </div>
+			  <div class="col-6 text-right">
+			   521-6 D
+			  </div>
+			</div>
+			<h6 class="text-primary mt-2">Day 2: 3rd Session - Bangladesh trail by 435 runs<h6>
+
+	         </div>
+    </a></div>
 </div>
-	  
- <div class="col-lg-3 text-white bg-info" id="bat2">
-	Bat 2	  
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-lg-4 col-md-6">
+<div class="card bg-white mx-2  mb-3" style="width: 100%;">
+<a href="match.html" class="match">
+	       <div class="card-header">Bangladesh tour of New Zealand</div>
+	         <div class="card-body">
+ 			<div class="row">
+			  <div class="col-6">
+			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/2560px-Flag_of_Bangladesh.svg.png"> BAN
+			  </div>
+			  <div class="col-6 text-right">
+			   50-5(32)
+			  </div>
+			</div>
+ 			<div class="row mt-2">
+			  <div class="col-6">
+			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/640px-Flag_of_New_Zealand.svg.png"> NZ
+			  </div>
+			  <div class="col-6 text-right">
+			   521-6 D
+			  </div>
+			</div>
+			<h6 class="text-primary mt-2">Day 2: 3rd Session - Bangladesh trail by 435 runs<h6>
+
+	         </div>
+    </a></div>
 </div>
-	  
-<div class="col-lg-3 text-dark bg-warning" id="bowler">
-	Bowler	  
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+   </div>
+
+
+<h4 class="ml-2 mt-3 mb-2">News</h4>
+
+
+<div class="row">
+<div class="col-lg-9">
+<div class="mx-2 mt-2 card" style="max-width: 100%;">
+  <img class="card-img-top" src="https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/332600/332694.4.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Bangladesh hestoric win againest New Zealand</strong></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
 </div>
 </div>
 </div>
-		<div id="lbb">Last Balls</div>
-	<button type="submit" onclick="midwiket()">Midwiket 1</button>
 
 
-	<button type="submit" onclick="deepExtracover()">Deepextracover 1</button>
+
+	<div class="row justify-content-center ">
+	 
+<div class="col-lg-3 col-md-4">
+<div class="mx-2 mt-2 card" style="max-width: 50rem;">
+  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
 
 
-	<button type="submit" onclick="thirdman()">Thirdman 1</button>
+
+<div class="col-lg-3 col-md-4">
+<div class="mx-2 mt-2 card" style="max-width: 50rem;">
+  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
 
 
-	<button type="submit" onclick="squreLeg()">Squreleg 1</button>
-
-	<button type="submit" onclick="point()">point 1</button>
-
-	<button type="submit" onclick="midOff()">Midoff 1</button>
-
-	<button type="submit" onclick="midOn()">MidOn</button>
-
-	<button type="submit" onclick="fineLeg()">Fine Leg</button>
-
-       <button type="submit" onclick="gully()">Gully</button>
-
-       <button type="submit" onclick="gully(4)">Gully 4</button>
 
 
-	</div> 
+
+<div class="col-lg-3 col-md-4">
+<div class="mx-2 mt-2 card" style="max-width: 50rem;">
+  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+
+
+<div class="col-lg-3 col-md-4">
+<div class="mx-2 mt-2 card" style="max-width: 50rem;">
+  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+</div>
+
+
+	</div>
+
+
+  </div>
 </body>
 </html>
-
-
