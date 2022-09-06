@@ -242,7 +242,7 @@ function deepExtracover(run){
 
   }
   function showAD(){
-    document.getElementById("adv").style.display = "block";
+    document.getElementById("adv").style.display = "none";
   }
 
   
