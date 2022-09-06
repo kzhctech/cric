@@ -1,144 +1,214 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Ball2Ball || Live Cricket</title>
+  <link rel="stylesheet" href="https://cric24.herokuapp.com/static/bootstrap.min.css">
+  <title>Australia vs New Zealand, 1st ODI</title>
+  <script src="https://cdn.socket.io/socket.io-3.0.0.js"></script>
+  <script>
+	  const socket = io('https://cric24.herokuapp.com');
+  </script>
+  <script src="index.js"></script>
 </head>
-<body class="bg-light" > 
-
-   <div class="container">
-    <div class="text-center mb-3"><div class="row"><div class="col-sm-12 col-md-6 col-lg-4">
-<img src="logo.png" width="100%" >
-</div></div></div>
-
-
-<h4 class="ml-2 mb-2">Match</h4>
-	<div class="row justify-content-center ">
-
-
-
-
-<div class="col-lg-4 col-md-6">
-<div class="card bg-white mb-3" style="width: 100%;">
-<a href="match.html" class="match">
-	       <div class="card-header">Bangladesh tour of New Zealand</div>
-	         <div class="card-body">
- 			<div class="row">
-			  <div class="col-6">
-			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Flag_of_Bangladesh.svg/2560px-Flag_of_Bangladesh.svg.png"> BAN
-			  </div>
-			  <div class="col-6 text-right">
-			   50-5(32)
-			  </div>
-			</div>
- 			<div class="row mt-2">
-			  <div class="col-6">
-			   <img width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Flag_of_New_Zealand.svg/640px-Flag_of_New_Zealand.svg.png"> NZ
-			  </div>
-			  <div class="col-6 text-right">
-			   521-6 D
-			  </div>
-			</div>
-			<h6 class="text-primary mt-2">Day 2: 3rd Session - Bangladesh trail by 435 runs<h6>
-
-	         </div>
-    </a></div>
-</div>
-
-
-
-
-
-
-
-	
-	
-	
-
-
-
-
-
-
-
-   </div>
-
-
-<h4 class="ml-2 mt-3 mb-2">News</h4>
-
-
+<body onload="scroll()">
+<div class="bg-primary">
+<div class="container text-white mb-2 py-2">
 <div class="row">
-<div class="col-lg-9">
-<div class="mx-2 mt-2 card" style="max-width: 100%;">
-  <img class="card-img-top" src="https://img1.hscicdn.com/image/upload/f_auto/lsci/db/PICTURES/CMS/332600/332694.4.jpg" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Bangladesh hestoric win againest New Zealand</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+<div class="col">
+Australia vs New Zealand, 1st ODI
 </div>
 </div>
 </div>
-
-
-
-	<div class="row justify-content-center ">
-	 
-<div class="col-lg-3 col-md-4">
-<div class="mx-2 mt-2 card" style="max-width: 50rem;">
-  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
+</div>
+<div class="container">
+<div class="my-2">
+<h5 id="statusbar" class="text-danger mb-2">
+Australia opt to bowl
+</h5>
 </div>
 </div>
-
-
-
-<div class="col-lg-3 col-md-4">
-<div class="mx-2 mt-2 card" style="max-width: 50rem;">
-  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-</div>
-
-
-
-
-
-<div class="col-lg-3 col-md-4">
-<div class="mx-2 mt-2 card" style="max-width: 50rem;">
-  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-</div>
-
-
-<div class="col-lg-3 col-md-4">
-<div class="mx-2 mt-2 card" style="max-width: 50rem;">
-  <img class="card-img-top" src="taskin.webp" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"><strong>Taskin Briliant knock</strong></h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-</div>
-
-
+	<div class="container">
+		<div class="gwrap">
+			<div class="iteam">
+				<div id="adv">
+					<img src="	 /static/logo.png	 " width="100%" alt="" srcset="">
+					<h4 class="text-center">END OF OVER</h4>
+				</div>
+			 		<div class="ground">
+						<div class="cercel">
+	    <div class="wicket">
+	      <div id="ball"></div>
+	      <div class="filder" id="f1"></div>
+	      <div class="filder" id="f2"></div>
+	      <div class="filder" id="f3"></div>
+	      <div class="filder" id="f4"></div>
+	      <div class="filder" id="f5"></div>
+	      <div class="filder" id="f6"></div>
+	      <div class="filder" id="f7"></div>
+	      <div class="filder" id="f8"></div>
+	      <div class="filder" id="f9"></div>
+	    </div>
+	  </div>
 	</div>
+		
+			</div>
+		</div>
 
 
-  </div>
+		
+
+
+			<div class="card-it">
+				<div class="card bg-white mx-2 mt-3  mb-3">
+					<div class="card-header">
+						  <div class="row">
+							<div class="col-md-4 col-sm-12">
+								<div class="row">
+									<div class="col-4"><span id="Teambat1name">NZ</span></div>
+									<div class="col-8 text-right"><h4 id="bat1Score">  10/1 (4.4)<small class="text-muted ml-2"></small></h4></div>
+								</div>
+							</div>
+							<div class="col-md-4 col-sm-12">
+									<div class="w-100 bg-primary text-white py-1 px-3 text-center"><h5 id="lb">Dot Ball</h5></div> 
+							</div>
+							<div class="col-md-4 col-sm-12">
+								
+							</div>
+						  </div>
+
+						
+					</div>
+					
+						
+						<div class="card-body">
+							<div class="row">
+								<div class="col-md-4 col-sm-12">
+									<div class="row">
+										<div class="col-2">
+											<img id="bat1img" height="50px" width="50px" src="https://m.cricbuzz.com/a/img/v1/192x192/i1/c182026/shams-mulani.jpg" alt="">
+										</div>
+										<div class="col-10">
+											<h6><span id="bat1name">Devon Conway*</span></h6>
+											<b><span id="bat1run">1(9)</span></b>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-12">
+									<div class="row">
+										<div class="col-2">
+											<img id="bat2img" height="50px" width="50px" src="https://m.cricbuzz.com/a/img/v1/192x192/i1/c182026/shams-mulani.jpg" alt="">
+										</div>
+										<div class="col-10">
+											<h6><span id="bat2name">Josh Hazlewood</span></h6>
+											<b><span id="bat2run">2</span></b>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4 col-sm-12">
+									<div class="row">
+										<div class="col-2">
+											<img id="bowlerimg" height="50px" width="50px" src="https://m.cricbuzz.com/a/img/v1/192x192/i1/c182026/shams-mulani.jpg" alt="">
+										</div>
+										<div class="col-10">
+											<h6><span id="bowlerName">Mitchell Starc*</span></h6>
+											<b><span id="bowlerOW">2.4-1</span></b>
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+							<div class="bg-light px-4 py-2">
+								<div class="row">
+									<div class="col-md-4">Last Balls:<span id="lbb">... 0 0 | 1 0 0 0 0 0 | 0 L1 0 W</span></div>
+									<div class="col-md-4">Partnership <span id="ps">10(28)</span></div>
+									<div class="col-md-4">Last WK:<span id="lw">Martin Guptill c Maxwell b Starc 6(19) - 10/1 in 4.4 ov.</span></div>
+								</div>
+							</div>
+						  </div>
+					
+					
+						
+					  
+			 </div>
+		  
+		<div id="cbox">
+			<h4>Chats</h4>
+			<div id="myDIV" class="mx-2">
+			   <ul class="list-group">
+				
+				   <li class="list-group-item"><b>Tahsin</b>:live ad</li>
+				
+				   <li class="list-group-item"><b>Sajib</b>:Hi</li>
+				
+				   <li class="list-group-item"><b>Sajib</b>:Hellow</li>
+				
+				   <li class="list-group-item"><b>Santo</b>:Hello</li>
+				
+				   <li class="list-group-item"><b>Anirban</b>:Ami Anirban busu</li>
+				
+				   <li class="list-group-item"><b>Emon</b>:india jetbe.....</li>
+				
+				   <li class="list-group-item"><b>Emon</b>:10 wk india jitbe kohali 100 korbe.....</li>
+				
+				   <li class="list-group-item"><b>Mahidul</b>:Hmm India jite I gelo</li>
+				
+				   <li class="list-group-item"><b>Tahsin</b>:ohh jitei gelo....</li>
+				
+				   <li class="list-group-item"><b>Santo</b>:Humm jite gelo</li>
+				
+				   <li class="list-group-item"><b>Jubayer</b>:Hi ajk Bangladesh Afghanistan....   </li>
+				
+				   <li class="list-group-item"><b>Jubayer</b>:Afghanistanjitbe 35 run a.... </li>
+				
+				   <li class="list-group-item"><b>Tahsin</b>:fullstory working</li>
+				
+				   <li class="list-group-item"><b>Tmia</b>:ohhh</li>
+				
+				   <li class="list-group-item"><b>Aksh</b>:Ami aksh</li>
+				
+				   <li class="list-group-item"><b>Santo</b>:Hi</li>
+				
+				   <li class="list-group-item"><b>Santo</b>:Anyone here</li>
+				
+				   <li class="list-group-item"><b>Santo</b>:Afganistan jite jabe mone hoy 😢</li>
+				
+				   <li class="list-group-item"><b>Tahsin</b>:Jitei gelo 😒</li>
+				
+				   <li class="list-group-item"><b>Mahadul</b>:Hmmmm</li>
+				
+				   <li class="list-group-item"><b>Sabbir</b>:Ami sabbir.....</li>
+				
+				   <li class="list-group-item"><b>Tajbir</b>:hei</li>
+				
+				   <li class="list-group-item"><b>Announms</b>:</li>
+				
+				   <li class="list-group-item"><b>Announms</b>:</li>
+				
+				   <li class="list-group-item"><b>Announms</b>:</li>
+				
+			   </ul>
+			</div>
+			<div class="row mb-4">
+				<div class="col-8 mb-2">
+					<input placeholder="Message" class="form-control" id="usrmsg">
+				</div>
+				<div class="col-4">
+					<button class="btn w-100 btn-primary" onclick="chat()">Send</button>
+				</div>
+				<div class="col-12">
+					<input placeholder="Write Your Name" class="form-control" onchange="nameSet()" id="usrnme">
+				</div>
+			 </div>
+		</div>
+		</div>
+			</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
+
+

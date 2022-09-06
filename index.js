@@ -1,11 +1,18 @@
-const socket = io('https://cric24.herokuapp.com');
 const startingLocation = window.location.pathname.substring(1);
 //alert(startingLocation);
 
 var cmnty;
 var cmnt;
 var dtail;
+var bat1img,bat2img,bowlerimg;
 
+function scroll(){
+  let elm = document.getElementById("myDIV");
+  setTimeout(function() {
+    elm.scrollTop = elm.scrollHeight;
+  }, 300);
+  document.getElementById('usrnme').value = localStorage.getItem("name");
+}
 
 /* Midwicket */
 
@@ -234,144 +241,236 @@ function deepExtracover(run){
   }, 5000);
 
   }
+  function showAD(){
+    document.getElementById("adv").style.display = "block";
+  }
+
+  
+  function hideAD(){
+    document.getElementById("adv").style.display = "none";
+  }
 
 
+  function updateScore(sco){
+
+    if(sco.BatName1){
+    document.getElementById("Teambat1name").innerHTML = sco.BatName1;  
+    document.getElementById("bat1Score").innerHTML = sco.BatRun1;
+     let ovr = sco.BatRun1.split(' ');
+    ovr = ovr[ovr.length - 1];
+    console.log(ovr);
+    if (ovr.includes(".")) {
+      hideAD();
+    }
+    else{
+      showAD();
+    }
+    }
+ 
+    
+    if(sco.BatName2){
+      document.getElementById("Teambat2name").innerHTML = sco.BatName2;  
+      document.getElementById("bat2Score").innerHTML = sco.BatRun2; 
+      
+    }
+
+
+    
+ }
+ 
+ 
 
 function updateit(sts){
    document.getElementById("statusbar").innerHTML = sts;  
 }
-
-function updateTitle(tit){
-   document.getElementById("vs").innerHTML = tit;  
+function updatePS(sts){
+   document.getElementById("ps").innerHTML = sts;  
+}
+function updateLW(sts){
+   document.getElementById("lw").innerHTML = sts;  
 }
 
-function updateScore(sco){
-   document.getElementById("batScore").innerHTML = sco;  
-}
+// function updateTitle(tit){
+//    document.getElementById("vs").innerHTML = tit;  
+// }
 
 
 function updateBat1(name,run){
-   document.getElementById("bat1").innerHTML = name + '' + run + '';  
+   document.getElementById("bat1name").innerHTML = name;  
+   document.getElementById("bat1run").innerHTML = run;  
 }
 
 function updateBat2(name,run){
-   document.getElementById("bat2").innerHTML = name + run;  
+  document.getElementById("bat2name").innerHTML = name;  
+  document.getElementById("bat2run").innerHTML = run;  
 }
 
 
 function updateBowler(name,over,wiket){
-   document.getElementById("bowler").innerHTML = name + ":" + over + "-" + wiket;  
+   document.getElementById("bowlerName").innerHTML = name;
+   document.getElementById("bowlerOW").innerHTML = over + "-" + wiket;  
 }
 
-function updatelbb(lbb){
-   document.getElementById("lbb").innerHTML = lbb;  
+function updatelbb(lbb,lb){
+   document.getElementById("lbb").innerHTML = lbb;
+   document.getElementById("lb").innerHTML = lb;
 }
 
-socket.on('message',(status)=> {
-  console.log('new');
-  console.log(status.commentry);
-  
-  
-  
-  
-  
-  
-  
-    if (status.commentry.includes("point")) {
-    point();
+
+
+socket.on('img',(st) =>{
+  //console.log(st);
+  if( st.batsman1img ){
+    bat1img = st.batsman1img;
+    document.getElementById("bat1img").setAttribute("src",st.batsman1img);
   }
   
-  else if (status.commentry.includes("mid-on")) {
-    midOn();
+  if( st.batsman2img ){
+    bat2img = st.batsman1img;
+    document.getElementById("bat2img").setAttribute("src",st.batsman2img);
   }
 
-  else if (status.commentry.includes("mid-of")) {
-    midOff();
+  if( st.bowlerimg ){
+    bowlerimg = st.batsman1img;
+    document.getElementById("bowlerimg").setAttribute("src",st.bowlerimg);
   }
+})
 
-  else if (status.commentry.includes("mid-wicket")) {
-    midwiket();
-  }
-  
-  else if (status.commentry.includes("square")) {
-    squreLeg();
-  }
-  
-  else if (status.commentry.includes("third")) {
-    thirdman();
-  }
-  
-  else if (status.commentry.includes("cover")) {
-    deepExtracover();
-  }
+socket.on('match',(status)=> {
 
-  else if (status.commentry.includes("long-on")) {
-    midwiket();
-  }
-  else if (status.commentry.includes("long-of")) {
-    deepExtracover();
-  }
-  
-  
-  
-  
+  //console.log(status.commentry);
+  //console.log(status.pship);
+  //console.log(status.lw);
   
   
   
   if (status.commentry != dtail){
       dtail = status.commentry;
-      console.log(status.commentry);
+      //console.log(status.commentry);
+      
  }
-if (cmnty != status.batTeam && cmnt != status.batTeam){
+
   cmnt = cmnty;
   cmnty = status.batTeam;
-  //midwiket();
-  updateit(status.status);
-  updatelbb(status.lbb);
-  updateTitle(status.title);
+
   updateScore(status.batTeam);
-  updateBat1(status.batsman1name,status.batsman1run);
-  updateBat2(status.batsman2name,status.batsman2run);
-  updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt );
-  if (status.commentry.includes("point")) {
-    point();
-  }
   
-  else if (status.commentry.includes("mid-on")) {
-    midOn();
-  }
+   updateit(status.status);
+   updatelbb(status.lbb,status.lb);
+   updateLW(status.lw);
+   updatePS(status.pship);
+  // updateTitle(status.title);
+  // console.log(status.batTeam);
+   updateBat1(status.batsman1name,status.batsman1run);
+   updateBat2(status.batsman2name,status.batsman2run);
+   updateBowler(status.bowlername,status.bowlerover,status.bowlerwikwt );
+   
 
-  else if (status.commentry.includes("mid-of")) {
-    midOff();
-  }
+   let lb = parseInt(status.lb, 10);
 
-  else if (status.commentry.includes("mid-wicket")) {
-    midwiket();
-  }
-  
-  else if (status.commentry.includes("square")) {
-    squreLeg();
-  }
-  
-  else if (status.commentry.includes("third")) {
-    thirdman();
-  }
-  
-  else if (status.commentry.includes("cover")) {
-    deepExtracover();
-  }
+   if (status.commentry.includes("point")) {
+     point(lb);
+   }
+   
+   else if (status.commentry.includes("mid-on")) {
+     midOn(lb);
+   }
+ 
+   else if (status.commentry.includes("mid-of")) {
+     midOff(lb);
+   }
+ 
+   else if (status.commentry.includes("mid-wicket")) {
+     midwiket(lb);
+   }
+   
+   else if (status.commentry.includes("square")) {
+     squreLeg(lb);
+   }
+   
+   else if (status.commentry.includes("third")) {
+     thirdman(lb);
+   }
+   
+   else if (status.commentry.includes("cover")) {
+     deepExtracover(lb);
+   }
+ 
+   else if (status.commentry.includes("long-on")) {
+     midwiket(lb);
+   }
+   else if (status.commentry.includes("long-of")) {
+     deepExtracover(lb);
+   }
 
-  else if (status.commentry.includes("long-on")) {
-    midwiket();
-  }
-  else if (status.commentry.includes("long-of")) {
-    deepExtracover();
-  }
+ 
   
-  console.log(status.batTeam);
-}
 });
 
-function hit(){
-  socket.emit('message',startingLocation);
+
+
+
+socket.on('message', (msg) => {
+
+  const el = document.createElement('li');
+  el.classList.add('list-group-item');
+  el.innerHTML ="<b>" + msg.name + ":</b>" + msg.body;
+  document.querySelector('ul').appendChild(el);
+  let elm = document.getElementById("myDIV");
+  setTimeout(function() {
+    elm.scrollTop = elm.scrollHeight;
+  }, 300);
+  //console.log(msg);
+
+});
+
+// document.querySelector('button').onclick = () => {
+
+//   const text = document.querySelector('input').value;
+//   socket.emit('message', text)
+  
+// }
+
+
+/*
+localStorage.setItem("name", "Smith");
+localStorage.getItem("name");
+*/
+
+function nameSet(){
+  let name = document.getElementById('usrnme').value;
+  localStorage.setItem("name", name);
 }
+
+function chat(){
+  let name;
+  if(!localStorage.getItem("name")){
+    name =  prompt("Please enter your name", "");
+    if (name != null) {
+      localStorage.setItem("name", name);
+      name = localStorage.getItem("name");
+    }
+    else{
+      name = "Announms";
+    }
+  }else{
+    name = localStorage.getItem("name");
+  }
+  let body = document.querySelector('#usrmsg').value;
+  let elm = document.getElementById("myDIV");
+  setTimeout(function() {
+    elm.scrollTop = elm.scrollHeight;
+  }, 300);
+
+console.log(localStorage.getItem("name"));
+
+  elm.scrollTop = elm.scrollHeight;
+  socket.emit('message', {name,body});
+  document.querySelector('#usrmsg').value = "";
+}
+
+// setInterval( function() {
+//   let elm = document.getElementById("myDIV");
+//   elm.scrollTop = elm.scrollHeight;
+//     console.log('hi');
+// },1000);
